@@ -39,7 +39,7 @@ node render.mjs tip 8772         # Animation Kippen (je Animation eigener Port �
 node render.mjs turn 8771 | explode 8773 | scenario 8774
 ```
 
-Rendering läuft per Software-GL (SwiftShader), ~3–4 s/Bild bei 4 parallelen Prozessen.
+Rendering läuft per Software-GL (SwiftShader): allein ~0,3–0,5 s/Bild, bei 4 parallelen Prozessen ~4–7 s/Bild. Besser nacheinander rendern.
 
 ## Stand
 

@@ -13,8 +13,8 @@ const IMG = path.join(ROOT, 'docs', 'img');
 const mode = process.argv[2] || 'all';
 const ONLY = process.argv[4] ? process.argv[4].split(',') : null;
 const PORT = +(process.argv[3] || 8765);
-const [W, H] = mode === 'stills' ? [1600, 900] : mode === 'scenario' ? [960, 540] : [1280, 720];
-const FPS = mode === 'scenario' ? 15 : 25;
+const [W, H] = mode === 'stills' ? [1600, 900] : [1280, 720];
+const FPS = mode === 'scenario' ? 20 : 25;
 fs.mkdirSync(IMG, {recursive: true});
 
 const types = {'.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.stl': 'application/octet-stream'};
@@ -208,11 +208,11 @@ async function animScenario() {
     else payload = {show: s.load > 0.5, scale: 1, slide: 0};
     // Kamera: weich nachgeführt, schräg von oben
     const tgt = [s.x, s.y, 500];
-    const want = [s.x - 3800, s.y - 6200, 5200];
+    const want = [s.x - 4200, s.y - 7600, 9800];
     if (!camPos) { camPos = want; camTgt = tgt; }
     camPos = camPos.map((v, i) => v + (want[i] - v) * 0.06); camTgt = camTgt.map((v, i) => v + (tgt[i] - v) * 0.12);
     return {state: {theta: s.th, payload, veh: [s.x, s.y, s.yaw], wheelL: s.wl, wheelR: s.wr},
-      cam: {pos: camPos, target: camTgt, fov: 36, shadowHalf: 9},
+      cam: {pos: camPos, target: camTgt, fov: 38, shadowHalf: 11},
       hud: {title: 'Einsatzszenario (Schema, Video teils beschleunigt)', sub: g.phase, box: `Zeit ${t.toFixed(1)} s\nKippwinkel ${s.th.toFixed(0)}°`},
       _heap: [s.hx || 0, s.hy || 0, s.heap]};
   });
