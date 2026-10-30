@@ -1,0 +1,250 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  html,body{margin:0;background:#dfe5ea;overflow:hidden;font-family:"DejaVu Sans",Arial,sans-serif}
+  #hud{position:absolute;left:0;top:0;right:0;padding:18px 26px;color:#14181c;pointer-events:none}
+  #title{font-size:26px;font-weight:700;letter-spacing:.2px}
+  #sub{font-size:17px;margin-top:4px;color:#36404a}
+  #box{position:absolute;right:26px;top:18px;background:rgba(255,255,255,.86);border-radius:8px;padding:10px 14px;
+       font-size:15px;line-height:1.5;min-width:230px;display:none;white-space:pre}
+  #foot{position:absolute;left:26px;bottom:14px;font-size:13px;color:#4b5560}
+  #labels div{position:absolute;font-size:14px;background:rgba(20,24,28,.82);color:#fff;padding:3px 8px;border-radius:4px;white-space:nowrap;transform:translate(-50%,-100%)}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="hud"><div id="title"></div><div id="sub"></div></div><div id="box"></div><div id="labels"></div>
+<div id="foot">Mist-Shuttle V1 · Konzeptmodell · github.com/delschad-jankir/agri-robotics</div>
+<script type="module">
+import * as THREE from 'three';
+import {STLLoader} from 'three/addons/loaders/STLLoader.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+
+const W = innerWidth, H = innerHeight;
+const renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});
+renderer.setSize(W, H); renderer.setPixelRatio(1);
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.NeutralToneMapping; renderer.toneMappingExposure = 1.0;
+renderer.localClippingEnabled = true;
+document.body.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xdfe5ea);
+scene.fog = new THREE.Fog(0xdfe5ea, 14, 60);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8f94, 0.6));
+const sun = new THREE.DirectionalLight(0xffffff, 2.2);
+sun.position.set(4, 7, 5); sun.castShadow = true;
+sun.shadow.mapSize.set(1536, 1536);
+Object.assign(sun.shadow.camera, {left:-4, right:4, top:4, bottom:-4, near:0.5, far:30});
+sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.01;
+scene.add(sun); scene.add(sun.target);
+
+let camera = new THREE.PerspectiveCamera(35, W/H, 0.05, 200);
+// Modellkoordinaten: mm, Z oben  ->  three: m, Y oben
+const root = new THREE.Group(); root.rotation.x = -Math.PI/2; root.scale.setScalar(0.001); scene.add(root);
+const vehicle = new THREE.Group(); vehicle.matrixAutoUpdate = false; root.add(vehicle);
+const props = new THREE.Group(); root.add(props);
+
+const MAT = {
+  frame:{metalness:.55, roughness:.45}, hopper:{metalness:.25, roughness:.45}, gate:{metalness:.25, roughness:.45},
+  steel:{metalness:.85, roughness:.3}, chrome:{metalness:1, roughness:.12}, tyre:{metalness:0, roughness:.92},
+  rim:{metalness:.3, roughness:.4}, drive:{metalness:.6, roughness:.4}, box:{metalness:.75, roughness:.35},
+  sensor:{metalness:.2, roughness:.5}, red:{metalness:.1, roughness:.4}, yellow:{metalness:.1, roughness:.5},
+  rubber:{metalness:0, roughness:.9}, beacon:{metalness:0, roughness:.3, emissive:0x552200}, payload:{metalness:0, roughness:1},
+};
+const parts = []; let META = null;
+const loader = new STLLoader();
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(200000, 200000), new THREE.MeshStandardMaterial({color:0xc9cfd4, roughness:.95}));
+ground.receiveShadow = true; props.add(ground);
+
+function m4(rows){ const m = new THREE.Matrix4(); m.set(...rows[0], ...rows[1], ...rows[2], ...rows[3]); return m; }
+
+window.init = async function(){
+  META = await (await fetch('../out/meta.json')).json();
+  await Promise.all(META.parts.map(async p => {
+    const geo = await loader.loadAsync('../out/stl/' + p.file);
+    geo.computeVertexNormals();
+    const c = new THREE.Color().setRGB(...p.color, THREE.SRGBColorSpace);
+    const mat = new THREE.MeshStandardMaterial(Object.assign({color:c, side:THREE.DoubleSide}, MAT[p.colorKey]||{}));
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.castShadow = true; mesh.receiveShadow = true; mesh.matrixAutoUpdate = false;
+    mesh.userData = p; geo.computeBoundingBox();
+    const ctr = new THREE.Vector3(); geo.boundingBox.getCenter(ctr); p.center = ctr;
+    vehicle.add(mesh); parts.push(mesh);
+  }));
+  return parts.length;
+};
+
+// Explosionsversatz (mm, Modellkoordinaten) je Teil
+function explodeOffset(p){
+  const n = p.name, g = p.group, c = p.center;
+  const sy = Math.sign(c.y) || 1;
+  if (n.startsWith('Mulde') || n.startsWith('Ladung') || n.startsWith('Klappenbolzen') || n.startsWith('Zylinder-Kopf')) return [0, 0, 650];
+  if (n.startsWith('Heckklappe')) return [-450, 0, 650];
+  if (n.startsWith('Kippbolzen')) return [-250, 0, 330];
+  if (n.startsWith('Teleskop')) return [260, 0, 260 + 40 * +(n.slice(-1))];
+  if (n.startsWith('Zylinder-Fuß')) return [260, 0, 150];
+  if (n.startsWith('Reifen')) return [0, sy*520, 0];
+  if (n.startsWith('Felge')) return [0, sy*430, 0];
+  if (n.startsWith('Achsstummel')) return [0, sy*330, 0];
+  if (n.startsWith('Flanschlager')) return [0, sy*230, 0];
+  if (n.startsWith('Winkelgetriebe')) return [0, 0, -260];
+  if (n.startsWith('Motor')) return [c.x > 0 ? -150 : 150, 0, -260];
+  if (n.startsWith('Akku') || n.startsWith('Steuerung')) return [380, sy*120, 200];
+  if (/Lidar|Sensormast|GNSS|Rundum|Not-Halt/.test(n)) return [380, sy*120, 420];
+  if (n.startsWith('Frontkamera') || n.startsWith('Bumper vorn')) return [620, 0, 0];
+  if (n.startsWith('Bumper hinten') || n.startsWith('Heckkamera')) return [-500, 0, 0];
+  if (n.startsWith('Gummipuffer')) return [0, 0, 200];
+  return [0, 0, 0];
+}
+
+function wheelMatrix(tag, deg){
+  const [x, z] = META.wheels[tag];
+  const a = deg * Math.PI / 180;
+  const T = new THREE.Matrix4().makeTranslation(x, 0, z), Ti = new THREE.Matrix4().makeTranslation(-x, 0, -z);
+  const R = new THREE.Matrix4().makeRotationY(a);
+  return T.multiply(R).multiply(Ti);
+}
+
+// state: {theta, wheelL, wheelR, veh:[x,y,yawDeg], explode:0..1, payload:{show, slide, scale}, hide:[...], clipY:null|value, ghost:[names]}
+window.setPose = function(st){
+  const th = Math.max(0, Math.min(META.theta_stop, st.theta || 0));
+  const key = (Math.round(th * 2) / 2).toFixed(1);
+  const P = META.poses[key];
+  const vm = new THREE.Matrix4().makeRotationZ((st.veh?.[2] || 0) * Math.PI/180);
+  vm.setPosition((st.veh?.[0]||0), (st.veh?.[1]||0), 0);
+  vehicle.matrix.copy(vm); vehicle.matrixWorldNeedsUpdate = true;
+  const clip = st.clipY != null ? [new THREE.Plane(new THREE.Vector3(0, 0, -1), 0)] : null;  // behält Modell-y >= 0
+  for (const mesh of parts){
+    const p = mesh.userData;
+    let M;
+    if (p.group.startsWith('wheel_')){
+      const tag = p.group.slice(6);
+      M = wheelMatrix(tag, tag.endsWith('L') ? (st.wheelL||0) : (st.wheelR||0));
+    } else M = m4(P[p.group]);
+    if (p.name.startsWith('Ladung')){
+      const pl = st.payload || {show:true, slide:0, scale:1};
+      mesh.visible = pl.show !== false && (pl.scale ?? 1) > 0.02;
+      // Ladung rutscht im Muldensystem nach hinten (-x) und wird kleiner
+      const s = pl.scale ?? 1, sl = pl.slide || 0;
+      const cx = -700, cz = 284;
+      const L = new THREE.Matrix4().makeTranslation(cx - sl, 0, cz).multiply(new THREE.Matrix4().makeScale(1, 1, Math.max(s, .01))).multiply(new THREE.Matrix4().makeTranslation(-cx, 0, -cz));
+      M = M.clone().multiply(L);
+    } else mesh.visible = true;
+    if (st.hide && st.hide.some(h => p.name.startsWith(h))) mesh.visible = false;
+    const e = st.explode || 0;
+    if (e > 0){ const o = explodeOffset(p); M = new THREE.Matrix4().makeTranslation(o[0]*e, o[1]*e, o[2]*e).multiply(M); }
+    mesh.matrix.copy(M); mesh.matrixWorldNeedsUpdate = true;
+    mesh.material.clippingPlanes = clip;
+    const ghost = st.ghost && st.ghost.some(h => p.name.startsWith(h));
+    mesh.material.transparent = !!ghost; mesh.material.opacity = ghost ? 0.18 : 1; mesh.material.depthWrite = !ghost;
+    mesh.castShadow = !ghost;
+  }
+};
+
+window.setCam = function(c){
+  // c: {pos:[x,y,z] mm Modell (Z oben), target:[...], fov, ortho: halfHeight_mm}
+  const toW = v => new THREE.Vector3(v[0]/1000, v[2]/1000, -v[1]/1000);
+  if (c.ortho){
+    const h = c.ortho/1000, w = h * W / H;
+    camera = new THREE.OrthographicCamera(-w, w, h, -h, 0.01, 100);
+  } else {
+    if (!(camera instanceof THREE.PerspectiveCamera)) camera = new THREE.PerspectiveCamera(35, W/H, 0.05, 200);
+    camera.fov = c.fov || 35; camera.updateProjectionMatrix();
+  }
+  camera.position.copy(toW(c.pos)); camera.up.set(0, 1, 0);
+  camera.lookAt(toW(c.target)); camera.updateProjectionMatrix(); camera.updateMatrixWorld(true);
+  if (c.sun){ sun.position.copy(toW(c.sun)); }
+  const t = toW(c.target); sun.target.position.copy(t);
+  sun.position.copy(t.clone().add(new THREE.Vector3(4, 7, 5)));
+  if (c.shadowHalf){ Object.assign(sun.shadow.camera, {left:-c.shadowHalf, right:c.shadowHalf, top:c.shadowHalf, bottom:-c.shadowHalf}); sun.shadow.camera.updateProjectionMatrix(); }
+};
+
+window.setHud = function(h){
+  document.getElementById('title').textContent = h.title || '';
+  document.getElementById('sub').textContent = h.sub || '';
+  const b = document.getElementById('box'); b.style.display = h.box ? 'block' : 'none'; b.textContent = h.box || '';
+  document.getElementById('foot').style.display = h.foot === false ? 'none' : 'block';
+  // Beschriftungen: [{text, at:[x,y,z] mm Modell (fahrzeugfest)}]
+  const lab = document.getElementById('labels'); lab.innerHTML = '';
+  for (const l of (h.labels || [])){
+    const v = new THREE.Vector3(...l.at).applyMatrix4(vehicle.matrix);
+    const w = new THREE.Vector3(v.x/1000, v.z/1000, -v.y/1000).project(camera);
+    const d = document.createElement('div'); d.textContent = l.text;
+    d.style.left = ((w.x + 1) / 2 * W) + 'px'; d.style.top = ((1 - w.y) / 2 * H) + 'px';
+    lab.appendChild(d);
+  }
+};
+
+window.setGround = function(on){ ground.visible = on; };
+window.setBg = function(hex){ scene.background = new THREE.Color(hex); scene.fog.color = new THREE.Color(hex); };
+window.setFog = function(n, f){ scene.fog.near = n; scene.fog.far = f; };
+
+// --- einfache Hof-/Stallszene (mm, Z oben) ---------------------------------
+const sceneObjs = {};
+function sbox(x0, x1, y0, y1, z0, z1, color, opt={}){
+  const g = new THREE.BoxGeometry(x1-x0, y1-y0, z1-z0);
+  const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial(Object.assign({color, roughness:.9}, opt)));
+  m.position.set((x0+x1)/2, (y0+y1)/2, (z0+z1)/2); m.castShadow = true; m.receiveShadow = true;
+  props.add(m); return m;
+}
+window.buildYard = function(){
+  // Stallgebäude: Gasse x 0..14000, y -1500..1500, Boxen beidseitig, offenes Tor bei x=14000
+  const wall = 0xb9a58a, wood = 0x7a5534, conc = 0xa9acaf;
+  sbox(-1000, 14280, -5000, 5000, -20, 0, conc, {roughness:.95});  // Stallboden
+  for (let i = 0; i < 4; i++){
+    const x0 = 1000 + i * 3300;
+    for (const s of [1, -1]){
+      // Boxentrennwände (Holz unten, Gitter angedeutet)
+      sbox(x0, x0 + 80, s*1500, s*4800, 0, 1300, wood);
+      sbox(x0, x0 + 80, s*1500, s*4800, 1300, 2200, 0x3a3f45, {metalness:.6, roughness:.4, transparent:true, opacity:.55});
+      // Boxenfront mit Tür (Öffnung 1200 mm bei y=s*1500)
+      const yf = s*1500;
+      sbox(x0 + 80, x0 + 1000, Math.min(yf, yf + s*80), Math.max(yf, yf + s*80), 0, 1300, wood);
+      sbox(x0 + 2200, x0 + 3300, Math.min(yf, yf + s*80), Math.max(yf, yf + s*80), 0, 1300, wood);
+      // Einstreu (Stroh) in der Box
+      sbox(x0 + 80, x0 + 3300, Math.min(s*1600, s*4800), Math.max(s*1600, s*4800), 0, 60, 0xd9c27a, {roughness:1});
+    }
+  }
+  sbox(14200, 14280, 1500, 5000, 0, 3200, wall); sbox(14200, 14280, -5000, -1500, 0, 3200, wall);
+  sbox(-1000, -920, -5000, 5000, 0, 3200, wall);
+  sbox(-1000, 14280, 4900, 5000, 0, 3200, wall);
+  // Hof (Schotter) und Mistplatte (Beton mit 3 Wänden) bei x 18000..24000, y -9000..-3000
+  sbox(14280, 30000, -14000, 6000, -25, -5, 0x9b968c, {roughness:1});
+  sbox(18000, 24000, -9500, -3000, -15, 0, 0x8f9397, {roughness:.95});
+  sbox(18000, 24000, -9700, -9500, 0, 1800, 0x8f9397); sbox(17800, 18000, -9700, -3000, 0, 1800, 0x8f9397);
+  sbox(24000, 24200, -9700, -3000, 0, 1800, 0x8f9397);
+  // Misthaufen (wächst beim Abkippen)
+  const heap = new THREE.Mesh(new THREE.SphereGeometry(1, 28, 16, 0, Math.PI*2, 0, Math.PI/2),
+    new THREE.MeshStandardMaterial({color:0x5b4129, roughness:1}));
+  heap.rotation.x = Math.PI/2; heap.castShadow = heap.receiveShadow = true; props.add(heap);
+  sceneObjs.heap = heap; heap.position.set(19300, -8400, 0); heap.scale.set(2200, 900, 1300);
+  const heap2 = heap.clone(); heap2.material = heap.material.clone(); props.add(heap2);
+  sceneObjs.newHeap = heap2; heap2.visible = false;
+  // Person (Größenvergleich / Stallgasse)
+  sceneObjs.person = person(); sceneObjs.person.visible = false;
+  ground.visible = false;
+};
+window.setHeap = function(pos, s){ const h = sceneObjs.newHeap; h.visible = s > 0.01; h.position.set(pos[0], pos[1], 0); h.scale.set(700*s+1, 500*s+1, 450*s+1); };
+
+function person(x=0, y=0){
+  const g = new THREE.Group(); const mat = new THREE.MeshStandardMaterial({color:0x3d5a80, roughness:.8});
+  const skin = new THREE.MeshStandardMaterial({color:0xd8b49a, roughness:.8});
+  const leg = new THREE.CapsuleGeometry(70, 760, 4, 12);
+  for (const s of [1, -1]){ const l = new THREE.Mesh(leg, mat); l.rotation.x = Math.PI/2; l.position.set(0, s*110, 450); g.add(l); }
+  const torso = new THREE.Mesh(new THREE.CapsuleGeometry(170, 420, 4, 16), new THREE.MeshStandardMaterial({color:0x2f6f4f, roughness:.8}));
+  torso.rotation.x = Math.PI/2; torso.scale.set(1, 1, .65); torso.position.set(0, 0, 1180); g.add(torso);
+  for (const s of [1, -1]){ const a = new THREE.Mesh(new THREE.CapsuleGeometry(55, 560, 4, 10), new THREE.MeshStandardMaterial({color:0x2f6f4f})); a.rotation.x = Math.PI/2; a.position.set(0, s*230, 1130); g.add(a); }
+  const head = new THREE.Mesh(new THREE.SphereGeometry(110, 20, 16), skin); head.position.set(0, 0, 1690); g.add(head);
+  g.traverse(o => { if (o.isMesh){ o.castShadow = o.receiveShadow = true; }});
+  g.position.set(x, y, 0); props.add(g); return g;
+}
+window.showPerson = function(pos){ if (!sceneObjs.person) sceneObjs.person = person(); sceneObjs.person.visible = !!pos; if (pos) sceneObjs.person.position.set(pos[0], pos[1], 0); };
+window.addDoor = function(){ // Stalltür 1200 mm als Größenreferenz
+  sbox(-1600, -1500, -1400, -600, 0, 2200, 0x7a5534); sbox(-1600, -1500, 600, 1400, 0, 2200, 0x7a5534);
+  sbox(-1600, -1500, -1400, 1400, 2200, 2500, 0x7a5534);
+};
+
+window.render = function(){ renderer.render(scene, camera); return true; };
+window.ready = true;
+</script></body></html>

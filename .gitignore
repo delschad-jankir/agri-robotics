@@ -1,0 +1,6 @@
+render/node_modules/
+out/frames/
+out/stl/
+out/meta.json
+out/*.log
+__pycache__/

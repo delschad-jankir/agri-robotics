@@ -1,0 +1,1813 @@
+{
+ "errors": [],
+ "warnings": [],
+ "collisions_rest": [],
+ "joints": [
+  {
+   "a": "Kippbolzen Ø25",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "Bolzen in Lagerbock",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Kippbolzen Ø25",
+   "b": "Mulde (Schweißbaugruppe)",
+   "art": "Bolzen in Kipplasche (Drehgelenk)",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Klappenbolzen Ø12",
+   "b": "Mulde (Schweißbaugruppe)",
+   "art": "Bolzen in Scharnierohr",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Klappenbolzen Ø12",
+   "b": "Heckklappe (Pendelklappe)",
+   "art": "Drehgelenk Klappe",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Zylinder-Fußbolzen Ø16",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "Bolzen in Fußgabel",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Zylinder-Fußbolzen Ø16",
+   "b": "Teleskopzylinder Stufe 0",
+   "art": "Drehgelenk Fußauge",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Zylinder-Kopfbolzen Ø16",
+   "b": "Mulde (Schweißbaugruppe)",
+   "art": "Bolzen in Kopfgabel",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Zylinder-Kopfbolzen Ø16",
+   "b": "Teleskopzylinder Stufe 4",
+   "art": "Drehgelenk Kopfauge",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Teleskopzylinder Stufe 1",
+   "b": "Teleskopzylinder Stufe 0",
+   "art": "Führung",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Teleskopzylinder Stufe 2",
+   "b": "Teleskopzylinder Stufe 1",
+   "art": "Führung",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Teleskopzylinder Stufe 3",
+   "b": "Teleskopzylinder Stufe 2",
+   "art": "Führung",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Teleskopzylinder Stufe 4",
+   "b": "Teleskopzylinder Stufe 3",
+   "art": "Führung",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Mulde (Schweißbaugruppe)",
+   "b": "Gummipuffer x+250 L",
+   "art": "Auflage (Ruhelage)",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Reifen VL",
+   "b": "Felge VL",
+   "art": "aufgezogen",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Felge VL",
+   "b": "Achsstummel VL",
+   "art": "Nabe/Passfeder",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Achsstummel VL",
+   "b": "Flanschlager VL",
+   "art": "Lagersitz",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Achsstummel VL",
+   "b": "Winkelgetriebe VL",
+   "art": "Hohlwelle",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Flanschlager VL",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt 4xM12",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Winkelgetriebe VL",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Motor VL",
+   "b": "Winkelgetriebe VL",
+   "art": "angeflanscht",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Reifen HL",
+   "b": "Felge HL",
+   "art": "aufgezogen",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Felge HL",
+   "b": "Achsstummel HL",
+   "art": "Nabe/Passfeder",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Achsstummel HL",
+   "b": "Flanschlager HL",
+   "art": "Lagersitz",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Achsstummel HL",
+   "b": "Winkelgetriebe HL",
+   "art": "Hohlwelle",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Flanschlager HL",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt 4xM12",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Winkelgetriebe HL",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Motor HL",
+   "b": "Winkelgetriebe HL",
+   "art": "angeflanscht",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Reifen VR",
+   "b": "Felge VR",
+   "art": "aufgezogen",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Felge VR",
+   "b": "Achsstummel VR",
+   "art": "Nabe/Passfeder",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Achsstummel VR",
+   "b": "Flanschlager VR",
+   "art": "Lagersitz",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Achsstummel VR",
+   "b": "Winkelgetriebe VR",
+   "art": "Hohlwelle",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Flanschlager VR",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt 4xM12",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Winkelgetriebe VR",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Motor VR",
+   "b": "Winkelgetriebe VR",
+   "art": "angeflanscht",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Reifen HR",
+   "b": "Felge HR",
+   "art": "aufgezogen",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Felge HR",
+   "b": "Achsstummel HR",
+   "art": "Nabe/Passfeder",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Achsstummel HR",
+   "b": "Flanschlager HR",
+   "art": "Lagersitz",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Achsstummel HR",
+   "b": "Winkelgetriebe HR",
+   "art": "Hohlwelle",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Flanschlager HR",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt 4xM12",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Winkelgetriebe HR",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Motor HR",
+   "b": "Winkelgetriebe HR",
+   "art": "angeflanscht",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Akkugehäuse (LiFePO4 48 V 100 Ah)",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Steuerungs-/Hydraulikgehäuse",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Bumper vorn (Schaltleiste)",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Bumper hinten (Schaltleiste)",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Sensormast",
+   "b": "Akkugehäuse (LiFePO4 48 V 100 Ah)",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "3D-Lidar (360°)",
+   "b": "Sensormast",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "RTK-GNSS-Antenne",
+   "b": "Steuerungs-/Hydraulikgehäuse",
+   "art": "Magnetfuß/verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Rundumleuchte",
+   "b": "Steuerungs-/Hydraulikgehäuse",
+   "art": "verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Not-Halt links",
+   "b": "Akkugehäuse (LiFePO4 48 V 100 Ah)",
+   "art": "eingebaut",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Not-Halt rechts",
+   "b": "Steuerungs-/Hydraulikgehäuse",
+   "art": "eingebaut",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Frontkamera (Stereo)",
+   "b": "Akkugehäuse (LiFePO4 48 V 100 Ah)",
+   "art": "Halter",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Frontkamera (Stereo)",
+   "b": "Steuerungs-/Hydraulikgehäuse",
+   "art": "Halter",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Heckkamera",
+   "b": "Bumper hinten (Schaltleiste)",
+   "art": "Halter",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Gummipuffer x-300 L",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verklebt/verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Gummipuffer x-300 R",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verklebt/verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Gummipuffer x+250 L",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verklebt/verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  },
+  {
+   "a": "Gummipuffer x+250 R",
+   "b": "Rahmen (Schweißbaugruppe)",
+   "art": "verklebt/verschraubt",
+   "abstand_mm": 0.0,
+   "ok": true
+  }
+ ],
+ "floating": [],
+ "ground_clearance_mm": 145.0,
+ "cyl_overlap_mm": [
+  63.0,
+  63.0,
+  63.0,
+  63.0
+ ],
+ "theta_max_cylinder_deg": 56.02,
+ "theta_stop_deg": 55.0,
+ "sweep": [
+  {
+   "theta": 0.0,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 8.6,
+    "Zylinder-Mulde": 15.0,
+    "Klappe-Rahmen": 11.1,
+    "Mulde-Technikbox": 31.9
+   }
+  },
+  {
+   "theta": 2.5,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 12.2,
+    "Zylinder-Mulde": 28.8,
+    "Klappe-Rahmen": 10.7,
+    "Mulde-Technikbox": 61.1
+   }
+  },
+  {
+   "theta": 5.0,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 15.8,
+    "Zylinder-Mulde": 42.5,
+    "Klappe-Rahmen": 20.3,
+    "Mulde-Technikbox": 93.3
+   }
+  },
+  {
+   "theta": 7.5,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 19.3,
+    "Zylinder-Mulde": 56.2,
+    "Klappe-Rahmen": 42.3,
+    "Mulde-Technikbox": 118.0
+   }
+  },
+  {
+   "theta": 10.0,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 22.8,
+    "Zylinder-Mulde": 69.9,
+    "Klappe-Rahmen": 65.3,
+    "Mulde-Technikbox": 140.5
+   }
+  },
+  {
+   "theta": 12.5,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 26.2,
+    "Zylinder-Mulde": 83.4,
+    "Klappe-Rahmen": 88.3,
+    "Mulde-Technikbox": 160.9
+   }
+  },
+  {
+   "theta": 15.0,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 29.6,
+    "Zylinder-Mulde": 96.9,
+    "Klappe-Rahmen": 111.2,
+    "Mulde-Technikbox": 172.6
+   }
+  },
+  {
+   "theta": 17.5,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 32.9,
+    "Zylinder-Mulde": 110.3,
+    "Klappe-Rahmen": 133.8,
+    "Mulde-Technikbox": 186.1
+   }
+  },
+  {
+   "theta": 20.0,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 35.0,
+    "Zylinder-Mulde": 110.2,
+    "Klappe-Rahmen": 156.1,
+    "Mulde-Technikbox": 201.6
+   }
+  },
+  {
+   "theta": 22.5,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 35.0,
+    "Zylinder-Mulde": 109.1,
+    "Klappe-Rahmen": 178.0,
+    "Mulde-Technikbox": 218.8
+   }
+  },
+  {
+   "theta": 25.0,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 35.0,
+    "Zylinder-Mulde": 107.4,
+    "Klappe-Rahmen": 199.5,
+    "Mulde-Technikbox": 238.5
+   }
+  },
+  {
+   "theta": 27.5,
+   "collisions": [],
+   "zmin_moving": 195.0,
+   "clearance": {
+    "Mulde-Reifen": 35.0,
+    "Zylinder-Mulde": 105.1,
+    "Klappe-Rahmen": 220.6,
+    "Mulde-Technikbox": 258.4
+   }
+  },
+  {
+   "theta": 30.0,
+   "collisions": [],
+   "zmin_moving": 191.6,
+   "clearance": {
+    "Mulde-Reifen": 35.0,
+    "Zylinder-Mulde": 102.4,
+    "Klappe-Rahmen": 241.1,
+    "Mulde-Technikbox": 283.6
+   }
+  },
+  {
+   "theta": 32.5,
+   "collisions": [],
+   "zmin_moving": 178.4,
+   "clearance": {
+    "Mulde-Reifen": 35.0,
+    "Zylinder-Mulde": 97.7,
+    "Klappe-Rahmen": 261.0,
+    "Mulde-Technikbox": 314.5
+   }
+  },
+  {
+   "theta": 35.0,
+   "collisions": [],
+   "zmin_moving": 164.3,
+   "clearance": {
+    "Mulde-Reifen": 35.0,
+    "Zylinder-Mulde": 90.6,
+    "Klappe-Rahmen": 280.3,
+    "Mulde-Technikbox": 349.5
+   }
+  },
+  {
+   "theta": 37.5,
+   "collisions": [],
+   "zmin_moving": 149.4,
+   "clearance": {
+    "Mulde-Reifen": 35.2,
+    "Zylinder-Mulde": 82.4,
+    "Klappe-Rahmen": 299.1,
+    "Mulde-Technikbox": 387.5
+   }
+  },
+  {
+   "theta": 40.0,
+   "collisions": [],
+   "zmin_moving": 133.7,
+   "clearance": {
+    "Mulde-Reifen": 37.1,
+    "Zylinder-Mulde": 73.0,
+    "Klappe-Rahmen": 317.1,
+    "Mulde-Technikbox": 427.6
+   }
+  },
+  {
+   "theta": 42.5,
+   "collisions": [],
+   "zmin_moving": 117.2,
+   "clearance": {
+    "Mulde-Reifen": 40.4,
+    "Zylinder-Mulde": 63.7,
+    "Klappe-Rahmen": 334.4,
+    "Mulde-Technikbox": 469.2
+   }
+  },
+  {
+   "theta": 45.0,
+   "collisions": [],
+   "zmin_moving": 99.9,
+   "clearance": {
+    "Mulde-Reifen": 44.5,
+    "Zylinder-Mulde": 60.0,
+    "Klappe-Rahmen": 351.1,
+    "Mulde-Technikbox": 511.8
+   }
+  },
+  {
+   "theta": 47.5,
+   "collisions": [],
+   "zmin_moving": 82.0,
+   "clearance": {
+    "Mulde-Reifen": 49.0,
+    "Zylinder-Mulde": 51.8,
+    "Klappe-Rahmen": 366.9,
+    "Mulde-Technikbox": 555.2
+   }
+  },
+  {
+   "theta": 50.0,
+   "collisions": [],
+   "zmin_moving": 63.4,
+   "clearance": {
+    "Mulde-Reifen": 53.7,
+    "Zylinder-Mulde": 42.0,
+    "Klappe-Rahmen": 381.9,
+    "Mulde-Technikbox": 599.1
+   }
+  },
+  {
+   "theta": 52.5,
+   "collisions": [],
+   "zmin_moving": 44.1,
+   "clearance": {
+    "Mulde-Reifen": 58.3,
+    "Zylinder-Mulde": 32.1,
+    "Klappe-Rahmen": 396.2,
+    "Mulde-Technikbox": 643.4
+   }
+  },
+  {
+   "theta": 55.0,
+   "collisions": [],
+   "zmin_moving": 24.3,
+   "clearance": {
+    "Mulde-Reifen": 62.7,
+    "Zylinder-Mulde": 22.2,
+    "Klappe-Rahmen": 409.5,
+    "Mulde-Technikbox": 687.8
+   }
+  }
+ ],
+ "masses": [
+  {
+   "teil": "Rahmen (Schweißbaugruppe)",
+   "gruppe": "fixed",
+   "masse_kg": 29.5,
+   "sp_mm": [
+    132.5,
+    -0.0,
+    211.9
+   ]
+  },
+  {
+   "teil": "Mulde (Schweißbaugruppe)",
+   "gruppe": "hopper",
+   "masse_kg": 73.35,
+   "sp_mm": [
+    -74.8,
+    -1.1,
+    459.3
+   ]
+  },
+  {
+   "teil": "Heckklappe (Pendelklappe)",
+   "gruppe": "gate",
+   "masse_kg": 13.54,
+   "sp_mm": [
+    -704.1,
+    0.0,
+    575.1
+   ]
+  },
+  {
+   "teil": "Kippbolzen Ø25",
+   "gruppe": "fixed",
+   "masse_kg": 2.25,
+   "sp_mm": [
+    -690.0,
+    0.0,
+    260.0
+   ]
+  },
+  {
+   "teil": "Klappenbolzen Ø12",
+   "gruppe": "hopper",
+   "masse_kg": 0.56,
+   "sp_mm": [
+    -712.0,
+    -0.0,
+    808.0
+   ]
+  },
+  {
+   "teil": "Zylinder-Fußbolzen Ø16",
+   "gruppe": "fixed",
+   "masse_kg": 0.08,
+   "sp_mm": [
+    575.0,
+    0.0,
+    215.0
+   ]
+  },
+  {
+   "teil": "Zylinder-Kopfbolzen Ø16",
+   "gruppe": "hopper",
+   "masse_kg": 0.08,
+   "sp_mm": [
+    575.0,
+    0.0,
+    728.0
+   ]
+  },
+  {
+   "teil": "Reifen VL",
+   "gruppe": "wheel_VL",
+   "masse_kg": 4.33,
+   "sp_mm": [
+    400.0,
+    350.0,
+    200.0
+   ]
+  },
+  {
+   "teil": "Felge VL",
+   "gruppe": "wheel_VL",
+   "masse_kg": 5.74,
+   "sp_mm": [
+    400.0,
+    341.4,
+    200.0
+   ]
+  },
+  {
+   "teil": "Achsstummel VL",
+   "gruppe": "wheel_VL",
+   "masse_kg": 1.08,
+   "sp_mm": [
+    400.0,
+    262.5,
+    200.0
+   ]
+  },
+  {
+   "teil": "Flanschlager VL",
+   "gruppe": "fixed",
+   "masse_kg": 1.27,
+   "sp_mm": [
+    400.0,
+    282.4,
+    200.0
+   ]
+  },
+  {
+   "teil": "Winkelgetriebe VL",
+   "gruppe": "fixed",
+   "masse_kg": 7.5,
+   "sp_mm": [
+    400.0,
+    170.0,
+    200.0
+   ]
+  },
+  {
+   "teil": "Motor VL",
+   "gruppe": "fixed",
+   "masse_kg": 4.5,
+   "sp_mm": [
+    249.0,
+    170.0,
+    192.0
+   ]
+  },
+  {
+   "teil": "Reifen HL",
+   "gruppe": "wheel_HL",
+   "masse_kg": 4.33,
+   "sp_mm": [
+    -400.0,
+    350.0,
+    200.0
+   ]
+  },
+  {
+   "teil": "Felge HL",
+   "gruppe": "wheel_HL",
+   "masse_kg": 5.74,
+   "sp_mm": [
+    -400.0,
+    341.4,
+    200.0
+   ]
+  },
+  {
+   "teil": "Achsstummel HL",
+   "gruppe": "wheel_HL",
+   "masse_kg": 1.08,
+   "sp_mm": [
+    -400.0,
+    262.5,
+    200.0
+   ]
+  },
+  {
+   "teil": "Flanschlager HL",
+   "gruppe": "fixed",
+   "masse_kg": 1.27,
+   "sp_mm": [
+    -400.0,
+    282.4,
+    200.0
+   ]
+  },
+  {
+   "teil": "Winkelgetriebe HL",
+   "gruppe": "fixed",
+   "masse_kg": 7.5,
+   "sp_mm": [
+    -400.0,
+    170.0,
+    200.0
+   ]
+  },
+  {
+   "teil": "Motor HL",
+   "gruppe": "fixed",
+   "masse_kg": 4.5,
+   "sp_mm": [
+    -249.0,
+    170.0,
+    192.0
+   ]
+  },
+  {
+   "teil": "Reifen VR",
+   "gruppe": "wheel_VR",
+   "masse_kg": 4.33,
+   "sp_mm": [
+    400.0,
+    -350.0,
+    200.0
+   ]
+  },
+  {
+   "teil": "Felge VR",
+   "gruppe": "wheel_VR",
+   "masse_kg": 5.74,
+   "sp_mm": [
+    400.0,
+    -341.4,
+    200.0
+   ]
+  },
+  {
+   "teil": "Achsstummel VR",
+   "gruppe": "wheel_VR",
+   "masse_kg": 1.08,
+   "sp_mm": [
+    400.0,
+    -262.5,
+    200.0
+   ]
+  },
+  {
+   "teil": "Flanschlager VR",
+   "gruppe": "fixed",
+   "masse_kg": 1.27,
+   "sp_mm": [
+    400.0,
+    -282.4,
+    200.0
+   ]
+  },
+  {
+   "teil": "Winkelgetriebe VR",
+   "gruppe": "fixed",
+   "masse_kg": 7.5,
+   "sp_mm": [
+    400.0,
+    -170.0,
+    200.0
+   ]
+  },
+  {
+   "teil": "Motor VR",
+   "gruppe": "fixed",
+   "masse_kg": 4.5,
+   "sp_mm": [
+    249.0,
+    -170.0,
+    192.0
+   ]
+  },
+  {
+   "teil": "Reifen HR",
+   "gruppe": "wheel_HR",
+   "masse_kg": 4.33,
+   "sp_mm": [
+    -400.0,
+    -350.0,
+    200.0
+   ]
+  },
+  {
+   "teil": "Felge HR",
+   "gruppe": "wheel_HR",
+   "masse_kg": 5.74,
+   "sp_mm": [
+    -400.0,
+    -341.4,
+    200.0
+   ]
+  },
+  {
+   "teil": "Achsstummel HR",
+   "gruppe": "wheel_HR",
+   "masse_kg": 1.08,
+   "sp_mm": [
+    -400.0,
+    -262.5,
+    200.0
+   ]
+  },
+  {
+   "teil": "Flanschlager HR",
+   "gruppe": "fixed",
+   "masse_kg": 1.27,
+   "sp_mm": [
+    -400.0,
+    -282.4,
+    200.0
+   ]
+  },
+  {
+   "teil": "Winkelgetriebe HR",
+   "gruppe": "fixed",
+   "masse_kg": 7.5,
+   "sp_mm": [
+    -400.0,
+    -170.0,
+    200.0
+   ]
+  },
+  {
+   "teil": "Motor HR",
+   "gruppe": "fixed",
+   "masse_kg": 4.5,
+   "sp_mm": [
+    -249.0,
+    -170.0,
+    192.0
+   ]
+  },
+  {
+   "teil": "Teleskopzylinder Stufe 0",
+   "gruppe": "cyl0",
+   "masse_kg": 10.3,
+   "sp_mm": [
+    575.0,
+    -0.0,
+    441.9
+   ]
+  },
+  {
+   "teil": "Teleskopzylinder Stufe 1",
+   "gruppe": "cyl1",
+   "masse_kg": 5.89,
+   "sp_mm": [
+    575.0,
+    -0.0,
+    478.5
+   ]
+  },
+  {
+   "teil": "Teleskopzylinder Stufe 2",
+   "gruppe": "cyl2",
+   "masse_kg": 4.77,
+   "sp_mm": [
+    575.0,
+    -0.0,
+    490.6
+   ]
+  },
+  {
+   "teil": "Teleskopzylinder Stufe 3",
+   "gruppe": "cyl3",
+   "masse_kg": 3.67,
+   "sp_mm": [
+    575.0,
+    0.0,
+    502.8
+   ]
+  },
+  {
+   "teil": "Teleskopzylinder Stufe 4",
+   "gruppe": "cyl4",
+   "masse_kg": 4.85,
+   "sp_mm": [
+    575.0,
+    -0.0,
+    527.8
+   ]
+  },
+  {
+   "teil": "Akkugehäuse (LiFePO4 48 V 100 Ah)",
+   "gruppe": "fixed",
+   "masse_kg": 62.0,
+   "sp_mm": [
+    621.0,
+    176.0,
+    468.0
+   ]
+  },
+  {
+   "teil": "Steuerungs-/Hydraulikgehäuse",
+   "gruppe": "fixed",
+   "masse_kg": 38.0,
+   "sp_mm": [
+    621.0,
+    -176.0,
+    468.0
+   ]
+  },
+  {
+   "teil": "Sensormast",
+   "gruppe": "fixed",
+   "masse_kg": 0.51,
+   "sp_mm": [
+    735.0,
+    175.0,
+    802.5
+   ]
+  },
+  {
+   "teil": "3D-Lidar (360°)",
+   "gruppe": "fixed",
+   "masse_kg": 0.27,
+   "sp_mm": [
+    735.0,
+    175.0,
+    935.0
+   ]
+  },
+  {
+   "teil": "RTK-GNSS-Antenne",
+   "gruppe": "fixed",
+   "masse_kg": 0.4,
+   "sp_mm": [
+    710.0,
+    -200.0,
+    709.0
+   ]
+  },
+  {
+   "teil": "Rundumleuchte",
+   "gruppe": "fixed",
+   "masse_kg": 0.6,
+   "sp_mm": [
+    530.0,
+    -240.0,
+    745.0
+   ]
+  },
+  {
+   "teil": "Not-Halt links",
+   "gruppe": "fixed",
+   "masse_kg": 0.3,
+   "sp_mm": [
+    560.0,
+    120.0,
+    725.1
+   ]
+  },
+  {
+   "teil": "Not-Halt rechts",
+   "gruppe": "fixed",
+   "masse_kg": 0.3,
+   "sp_mm": [
+    560.0,
+    -120.0,
+    725.1
+   ]
+  },
+  {
+   "teil": "Frontkamera (Stereo)",
+   "gruppe": "fixed",
+   "masse_kg": 0.4,
+   "sp_mm": [
+    775.0,
+    0.0,
+    620.0
+   ]
+  },
+  {
+   "teil": "Bumper vorn (Schaltleiste)",
+   "gruppe": "fixed",
+   "masse_kg": 2.5,
+   "sp_mm": [
+    780.0,
+    0.0,
+    198.0
+   ]
+  },
+  {
+   "teil": "Bumper hinten (Schaltleiste)",
+   "gruppe": "fixed",
+   "masse_kg": 2.0,
+   "sp_mm": [
+    -740.0,
+    0.0,
+    192.5
+   ]
+  },
+  {
+   "teil": "Heckkamera",
+   "gruppe": "fixed",
+   "masse_kg": 0.3,
+   "sp_mm": [
+    -767.5,
+    0.0,
+    190.0
+   ]
+  },
+  {
+   "teil": "Gummipuffer x-300 L",
+   "gruppe": "fixed",
+   "masse_kg": 0.02,
+   "sp_mm": [
+    -300.0,
+    250.0,
+    235.0
+   ]
+  },
+  {
+   "teil": "Gummipuffer x-300 R",
+   "gruppe": "fixed",
+   "masse_kg": 0.02,
+   "sp_mm": [
+    -300.0,
+    -250.0,
+    235.0
+   ]
+  },
+  {
+   "teil": "Gummipuffer x+250 L",
+   "gruppe": "fixed",
+   "masse_kg": 0.02,
+   "sp_mm": [
+    250.0,
+    250.0,
+    235.0
+   ]
+  },
+  {
+   "teil": "Gummipuffer x+250 R",
+   "gruppe": "fixed",
+   "masse_kg": 0.02,
+   "sp_mm": [
+    250.0,
+    -250.0,
+    235.0
+   ]
+  }
+ ],
+ "vehicle_mass_kg": 354.2,
+ "payload": {
+  "volumen_m3": 0.323,
+  "dichte": 750,
+  "masse_kg": 242.1,
+  "sp_mm": [
+   -147.6,
+   0.0,
+   540.8
+  ]
+ },
+ "stability": [
+  {
+   "theta": 0.0,
+   "cg_beladen": [
+    54.4,
+    6.8,
+    441.2
+   ],
+   "cg_leer": [
+    192.4,
+    11.5,
+    373.2
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 38.1,
+    "hinten": 45.8,
+    "seite": 37.9
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 29.1,
+    "hinten": 57.8,
+    "seite": 42.2
+   },
+   "zylinderkraft_beladen_N": 1367.0,
+   "zylinderkraft_leer_N": 349.0,
+   "zylinderlaenge_mm": 513.0
+  },
+  {
+   "theta": 2.5,
+   "cg_beladen": [
+    46.9,
+    6.8,
+    455.0
+   ],
+   "cg_leer": [
+    188.6,
+    11.5,
+    380.4
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 37.8,
+    "hinten": 44.5,
+    "seite": 37.0
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 29.1,
+    "hinten": 57.1,
+    "seite": 41.7
+   },
+   "zylinderkraft_beladen_N": 1338.0,
+   "zylinderkraft_leer_N": 342.0,
+   "zylinderlaenge_mm": 568.1
+  },
+  {
+   "theta": 5.0,
+   "cg_beladen": [
+    38.9,
+    6.8,
+    468.5
+   ],
+   "cg_leer": [
+    184.5,
+    11.5,
+    387.5
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 37.6,
+    "hinten": 43.1,
+    "seite": 36.2
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 29.1,
+    "hinten": 56.5,
+    "seite": 41.1
+   },
+   "zylinderkraft_beladen_N": 1308.0,
+   "zylinderkraft_leer_N": 334.0,
+   "zylinderlaenge_mm": 623.1
+  },
+  {
+   "theta": 7.5,
+   "cg_beladen": [
+    30.3,
+    6.8,
+    481.6
+   ],
+   "cg_leer": [
+    180.2,
+    11.5,
+    394.4
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 37.5,
+    "hinten": 41.8,
+    "seite": 35.5
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 29.1,
+    "hinten": 55.8,
+    "seite": 40.6
+   },
+   "zylinderkraft_beladen_N": 1276.0,
+   "zylinderkraft_leer_N": 327.0,
+   "zylinderlaenge_mm": 677.9
+  },
+  {
+   "theta": 10.0,
+   "cg_beladen": [
+    21.2,
+    6.8,
+    494.3
+   ],
+   "cg_leer": [
+    175.5,
+    11.5,
+    401.1
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 37.5,
+    "hinten": 40.4,
+    "seite": 34.8
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 29.2,
+    "hinten": 55.1,
+    "seite": 40.2
+   },
+   "zylinderkraft_beladen_N": 1243.0,
+   "zylinderkraft_leer_N": 318.0,
+   "zylinderlaenge_mm": 732.5
+  },
+  {
+   "theta": 12.5,
+   "cg_beladen": [
+    11.5,
+    6.8,
+    506.6
+   ],
+   "cg_leer": [
+    170.6,
+    11.5,
+    407.6
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 37.5,
+    "hinten": 39.1,
+    "seite": 34.1
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 29.4,
+    "hinten": 54.5,
+    "seite": 39.7
+   },
+   "zylinderkraft_beladen_N": 1207.0,
+   "zylinderkraft_leer_N": 310.0,
+   "zylinderlaenge_mm": 786.7
+  },
+  {
+   "theta": 15.0,
+   "cg_beladen": [
+    1.3,
+    6.8,
+    518.5
+   ],
+   "cg_leer": [
+    165.3,
+    11.5,
+    413.8
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 37.6,
+    "hinten": 37.7,
+    "seite": 33.5
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 29.6,
+    "hinten": 53.8,
+    "seite": 39.3
+   },
+   "zylinderkraft_beladen_N": 1170.0,
+   "zylinderkraft_leer_N": 300.0,
+   "zylinderlaenge_mm": 840.7
+  },
+  {
+   "theta": 17.5,
+   "cg_beladen": [
+    -9.4,
+    6.8,
+    529.9
+   ],
+   "cg_leer": [
+    159.9,
+    11.5,
+    419.9
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 37.7,
+    "hinten": 36.4,
+    "seite": 32.9
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 29.8,
+    "hinten": 53.1,
+    "seite": 38.9
+   },
+   "zylinderkraft_beladen_N": 1131.0,
+   "zylinderkraft_leer_N": 290.0,
+   "zylinderlaenge_mm": 894.2
+  },
+  {
+   "theta": 20.0,
+   "cg_beladen": [
+    -20.6,
+    6.8,
+    540.9
+   ],
+   "cg_leer": [
+    154.1,
+    11.5,
+    425.7
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 37.9,
+    "hinten": 35.0,
+    "seite": 32.4
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 30.0,
+    "hinten": 52.5,
+    "seite": 38.5
+   },
+   "zylinderkraft_beladen_N": 1089.0,
+   "zylinderkraft_leer_N": 280.0,
+   "zylinderlaenge_mm": 947.4
+  },
+  {
+   "theta": 22.5,
+   "cg_beladen": [
+    -32.3,
+    6.8,
+    551.3
+   ],
+   "cg_leer": [
+    148.2,
+    11.5,
+    431.2
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 38.1,
+    "hinten": 33.7,
+    "seite": 31.9
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 30.3,
+    "hinten": 51.8,
+    "seite": 38.1
+   },
+   "zylinderkraft_beladen_N": 1046.0,
+   "zylinderkraft_leer_N": 269.0,
+   "zylinderlaenge_mm": 1000.1
+  },
+  {
+   "theta": 25.0,
+   "cg_beladen": [
+    -44.4,
+    6.8,
+    561.2
+   ],
+   "cg_leer": [
+    142.0,
+    11.5,
+    436.5
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 38.4,
+    "hinten": 32.4,
+    "seite": 31.4
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 30.6,
+    "hinten": 51.2,
+    "seite": 37.8
+   },
+   "zylinderkraft_beladen_N": 1000.0,
+   "zylinderkraft_leer_N": 258.0,
+   "zylinderlaenge_mm": 1052.4
+  },
+  {
+   "theta": 27.5,
+   "cg_beladen": [
+    -56.9,
+    6.8,
+    570.6
+   ],
+   "cg_leer": [
+    135.5,
+    11.5,
+    441.5
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 38.7,
+    "hinten": 31.0,
+    "seite": 31.0
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 30.9,
+    "hinten": 50.5,
+    "seite": 37.5
+   },
+   "zylinderkraft_beladen_N": 952.0,
+   "zylinderkraft_leer_N": 246.0,
+   "zylinderlaenge_mm": 1104.2
+  },
+  {
+   "theta": 30.0,
+   "cg_beladen": [
+    -69.9,
+    6.8,
+    579.5
+   ],
+   "cg_leer": [
+    128.9,
+    11.5,
+    446.2
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 39.0,
+    "hinten": 29.7,
+    "seite": 30.6
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 31.3,
+    "hinten": 49.8,
+    "seite": 37.2
+   },
+   "zylinderkraft_beladen_N": 902.0,
+   "zylinderkraft_leer_N": 233.0,
+   "zylinderlaenge_mm": 1155.5
+  },
+  {
+   "theta": 32.5,
+   "cg_beladen": [
+    -83.2,
+    6.8,
+    587.7
+   ],
+   "cg_leer": [
+    122.0,
+    11.5,
+    450.7
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 39.4,
+    "hinten": 28.3,
+    "seite": 30.3
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 31.7,
+    "hinten": 49.2,
+    "seite": 36.9
+   },
+   "zylinderkraft_beladen_N": 849.0,
+   "zylinderkraft_leer_N": 220.0,
+   "zylinderlaenge_mm": 1206.3
+  },
+  {
+   "theta": 35.0,
+   "cg_beladen": [
+    -96.8,
+    6.8,
+    595.4
+   ],
+   "cg_leer": [
+    115.0,
+    11.5,
+    454.8
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 39.8,
+    "hinten": 27.0,
+    "seite": 30.0
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 32.1,
+    "hinten": 48.6,
+    "seite": 36.7
+   },
+   "zylinderkraft_beladen_N": 794.0,
+   "zylinderkraft_leer_N": 206.0,
+   "zylinderlaenge_mm": 1256.5
+  },
+  {
+   "theta": 37.5,
+   "cg_beladen": [
+    -110.8,
+    6.8,
+    602.5
+   ],
+   "cg_leer": [
+    107.8,
+    11.5,
+    458.6
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 40.3,
+    "hinten": 25.6,
+    "seite": 29.7
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 32.5,
+    "hinten": 47.9,
+    "seite": 36.4
+   },
+   "zylinderkraft_beladen_N": 737.0,
+   "zylinderkraft_leer_N": 192.0,
+   "zylinderlaenge_mm": 1306.1
+  },
+  {
+   "theta": 40.0,
+   "cg_beladen": [
+    -125.1,
+    6.8,
+    609.0
+   ],
+   "cg_leer": [
+    100.4,
+    11.5,
+    462.1
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 40.8,
+    "hinten": 24.3,
+    "seite": 29.4
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 33.0,
+    "hinten": 47.3,
+    "seite": 36.2
+   },
+   "zylinderkraft_beladen_N": 677.0,
+   "zylinderkraft_leer_N": 177.0,
+   "zylinderlaenge_mm": 1355.1
+  },
+  {
+   "theta": 42.5,
+   "cg_beladen": [
+    -139.6,
+    6.8,
+    614.8
+   ],
+   "cg_leer": [
+    92.9,
+    11.5,
+    465.3
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 41.3,
+    "hinten": 23.0,
+    "seite": 29.2
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 33.4,
+    "hinten": 46.6,
+    "seite": 36.0
+   },
+   "zylinderkraft_beladen_N": 615.0,
+   "zylinderkraft_leer_N": 161.0,
+   "zylinderlaenge_mm": 1403.5
+  },
+  {
+   "theta": 45.0,
+   "cg_beladen": [
+    -154.4,
+    6.8,
+    620.0
+   ],
+   "cg_leer": [
+    85.3,
+    11.5,
+    468.2
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 41.8,
+    "hinten": 21.6,
+    "seite": 29.0
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 33.9,
+    "hinten": 46.0,
+    "seite": 35.9
+   },
+   "zylinderkraft_beladen_N": 550.0,
+   "zylinderkraft_leer_N": 145.0,
+   "zylinderlaenge_mm": 1451.2
+  },
+  {
+   "theta": 47.5,
+   "cg_beladen": [
+    -169.4,
+    6.8,
+    624.6
+   ],
+   "cg_leer": [
+    77.5,
+    11.5,
+    470.7
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 42.4,
+    "hinten": 20.3,
+    "seite": 28.8
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 34.4,
+    "hinten": 45.4,
+    "seite": 35.7
+   },
+   "zylinderkraft_beladen_N": 482.0,
+   "zylinderkraft_leer_N": 128.0,
+   "zylinderlaenge_mm": 1498.2
+  },
+  {
+   "theta": 50.0,
+   "cg_beladen": [
+    -184.5,
+    6.8,
+    628.5
+   ],
+   "cg_leer": [
+    69.6,
+    11.5,
+    472.9
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 42.9,
+    "hinten": 18.9,
+    "seite": 28.6
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 34.9,
+    "hinten": 44.8,
+    "seite": 35.6
+   },
+   "zylinderkraft_beladen_N": 411.0,
+   "zylinderkraft_leer_N": 110.0,
+   "zylinderlaenge_mm": 1544.5
+  },
+  {
+   "theta": 52.5,
+   "cg_beladen": [
+    -199.9,
+    6.8,
+    631.7
+   ],
+   "cg_leer": [
+    61.7,
+    11.5,
+    474.8
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 43.5,
+    "hinten": 17.6,
+    "seite": 28.5
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 35.5,
+    "hinten": 44.2,
+    "seite": 35.5
+   },
+   "zylinderkraft_beladen_N": 338.0,
+   "zylinderkraft_leer_N": 92.0,
+   "zylinderlaenge_mm": 1590.1
+  },
+  {
+   "theta": 55.0,
+   "cg_beladen": [
+    -215.3,
+    6.8,
+    634.3
+   ],
+   "cg_leer": [
+    53.7,
+    11.5,
+    476.3
+   ],
+   "kippgrenze_beladen_deg": {
+    "vorn": 44.1,
+    "hinten": 16.2,
+    "seite": 28.4
+   },
+   "kippgrenze_leer_deg": {
+    "vorn": 36.0,
+    "hinten": 43.6,
+    "seite": 35.4
+   },
+   "zylinderkraft_beladen_N": 262.0,
+   "zylinderkraft_leer_N": 73.0,
+   "zylinderlaenge_mm": 1635.0
+  }
+ ],
+ "mass_total_loaded_kg": 596.3,
+ "runtime_s": 16.4
+}

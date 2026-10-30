@@ -1,0 +1,29 @@
+{
+ "Zugkraft Hang+Schotter+Beschl. [N]": 1744,
+ "Drehmoment Drehen auf Stelle [Nm]": 702,
+ "Umfangskraft je Seite beim Drehen [N]": 1003,
+ "Radmoment erforderlich je Rad [Nm]": 100,
+ "Raddrehzahl bei v_max [1/min]": 57.3,
+ "Leistung Hang 0,6 m/s gesamt [W]": 1610,
+ "Leistung eben Beton 1,2 m/s gesamt [W]": 324,
+ "übertragbare Zugkraft mu=0.5 [N]": 2892,
+ "übertragbare Zugkraft mu=0.3 [N]": 1735,
+ "Energie je Fahrt [Wh]": 30.5,
+ "Energie je Tag [Wh]": 1459,
+ "Akku nutzbar 48 V/100 Ah [Wh]": 3840,
+ "Reserve (Tage je Ladung)": 2.6,
+ "Annahmen": {
+  "v_max": 1.2,
+  "v_stall": 0.6,
+  "slope": 0.15,
+  "c_rr_concrete": 0.03,
+  "c_rr_gravel": 0.1,
+  "mu_lat": 0.6,
+  "a_acc": 0.5,
+  "eta": 0.65,
+  "trips_per_day": 40,
+  "dist_one_way": 120.0,
+  "p_base": 60.0,
+  "hours_on": 4.0
+ }
+}
