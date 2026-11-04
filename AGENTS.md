@@ -27,7 +27,7 @@ Gründungsidee von Delschad Jankir (KI/Data Science) und einem Partner mit Robot
 | `cad/charts.py` | Diagramme aus den Prüfberichten |
 | `render/` | three.js-Szene + Playwright-Renderer für Bilder und Videos |
 | `out/mist_shuttle_v1.step` | aktuelle STEP-Baugruppe |
-| `prompts/fusion_umsetzung.md` | **offener Auftrag:** V2 als natives, geprüftes Fusion-Modell |
+| `prompts/fusion_umsetzung.md` | **offener Auftrag:** V2 „selbstladender Mist-Shuttle“ (autonomer Mini-Lader mit Dunggabel-Schaufel) als natives, geprüftes Fusion-Modell |
 
 ## Pipeline
 
@@ -45,4 +45,4 @@ Rendering läuft per Software-GL (SwiftShader): allein ~0,3–0,5 s/Bild, bei 4 
 ## Stand
 
 - **30.10.2026:** Lastenheft und Konzept V1 „Mist-Shuttle“ (autonomer Elektro-Hinterkipper, 0,32 m³) mit 52 Teilen. Alle Prüfungen bestanden. Kosten Prototyp ≈ 9–19 k€, Planwert 12 k€. Nächster Schritt: Besuch vor Ort, Annahmen messen.
-- **04.11.2026:** Kritische Prüfung von V1: Material fällt beim Kippen auf die Heck-Schaltleiste, die Mechanik ist zu kompliziert, und das Fahrzeug passt nicht zum Container-Ablauf des Betriebs. Nächster Schritt: `prompts/fusion_umsetzung.md` in einer lokalen Session mit Fusion ausführen.
+- **04.11.2026:** Kritische Prüfung von V1: Material fällt beim Kippen auf die Heck-Schaltleiste, die Mechanik ist zu kompliziert, und das Fahrzeug passt nicht zum Container-Ablauf des Betriebs. Entscheidung Delschad: V2 wird ein vollautomatischer, selbstladender Mist-Shuttle (nimmt den Mist aus der Stallgasse mit Schaufel und Niederhalter auf, kippt vorn aus). Nächster Schritt: `prompts/fusion_umsetzung.md` lokal mit dem Fusion-MCP ausführen.
