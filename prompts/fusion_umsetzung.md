@@ -1,6 +1,6 @@
 # Auftrag: Stall-Fahrzeug als professionelles, funktionsfähiges Fusion-Modell
 
-Du arbeitest in einer **lokalen Claude-Code-Session auf Delschads Rechner**, auf dem **Autodesk Fusion** installiert ist. Ziel ist ein **natives, parametrisches Fusion-Modell** des verbesserten Fahrzeugs. Es muss mechanisch stimmen: keine Kollisionen, keine frei schwebenden Teile, Gelenke mit realistischen Grenzen, plausible Massen und Schwerpunkte, Standsicherheit, Antriebs- und Festigkeitsnachweise, und das Material fällt beim Entleeren frei vom Fahrzeug.
+Du arbeitest in einer **lokalen Claude-Code-Session auf Delschads Rechner**, auf dem **Autodesk Fusion** installiert und ein **Fusion-MCP-Server** eingerichtet ist. Ziel ist ein **natives, parametrisches Fusion-Modell** des verbesserten Fahrzeugs. Es muss mechanisch stimmen: keine Kollisionen, keine frei schwebenden Teile, Gelenke mit realistischen Grenzen, plausible Massen und Schwerpunkte, Standsicherheit, Antriebs- und Festigkeitsnachweise, und das Material fällt beim Entleeren frei vom Fahrzeug.
 
 Das bisherige Modell ist **kein** Fusion-Modell. Es ist Python-Code (build123d) plus ein STEP-Export. Es dient als Referenz und Lernquelle. In Fusion wird **neu und besser** konstruiert, nicht nur importiert.
 
@@ -77,14 +77,16 @@ Schreibe die Entscheidung mit Begründung nach `docs/06_konzept_v2.md`, inklusiv
 
 ---
 
-## Phase 2 – Brücke zu Fusion bauen (damit du selbst iterieren kannst)
+## Phase 2 – Verbindung zu Fusion (vorhandenen Fusion-MCP nutzen)
 
-Du kannst in Fusion nicht klicken. Baue deshalb eine kleine, eigene Brücke:
+Delschad hat einen **Fusion-MCP-Server** in Claude Code eingerichtet. Nutze ihn als Hauptweg.
 
-1. `fusion/bridge_addin/` – ein **Fusion-Add-in (Python)**, das einen Ordner überwacht, z. B. `fusion/inbox/`. Legst du dort ein Python-Skript ab, führt das Add-in es **im Fusion-Hauptthread** aus (Muster: Hintergrund-Thread pollt den Ordner, `app.fireCustomEvent` → `CustomEventHandler` → `exec`). Ergebnisse, Fehler (Traceback), Bilder und JSON-Berichte schreibt es nach `fusion/outbox/`. Lies die Ausgaben danach selbst aus.
-2. Schreib Delschad eine **Schritt-für-Schritt-Anleitung**, wie er das Add-in einmalig lädt: Fusion → Dienstprogramme → Add-Ins → Skripte und Add-Ins → „+“ → Ordner `fusion/bridge_addin` wählen → Ausführen, optional „Beim Start ausführen“. Teste die Brücke mit einem Mini-Skript (Würfel erzeugen, Screenshot speichern), bevor du weitermachst.
-3. Kein Code aus dem Internet ungeprüft ausführen. Die Brücke schreibst du selbst und hältst sie minimal.
-4. **Einheiten:** Die Fusion-API rechnet intern in **cm** (Längen) und **rad** (Winkel). Masse kommt in kg, Schwerpunkte in cm. Rechne konsequent um und prüfe das in einem Test.
+1. **Werkzeuge erkunden:** Liste die Tools des Fusion-MCP auf und notiere in `fusion/README.md`, was sie können. Wichtig sind: beliebigen Fusion-Python-Code ausführen, Geometrie erzeugen, Parameter setzen, Gelenke anlegen/bewegen, Interferenzanalyse, physikalische Eigenschaften, Viewport-Bild speichern, STEP/F3D exportieren.
+2. **Verbindung testen:** Mini-Test über den MCP (Würfel 100 mm erzeugen, Masse abfragen, Screenshot speichern) und das Ergebnis selbst prüfen. Läuft Fusion nicht oder ist der MCP nicht verbunden, Delschad Bescheid geben.
+3. **Lücken schließen, nicht ersetzen:** Kann der MCP etwas Benötigtes nicht, und hat er ein Tool für „Python-Skript ausführen“, dann darüber gehen. Fehlt auch das, ergänze **minimal** ein eigenes Add-in in `fusion/bridge_addin/`: ein Ordner `fusion/inbox/` wird überwacht, Skripte werden über `app.fireCustomEvent` im Fusion-Hauptthread ausgeführt, Ergebnisse und Tracebacks landen in `fusion/outbox/`. Delschad lädt es einmalig über Dienstprogramme → Add-Ins → „+“.
+4. **Reproduzierbarkeit:** Auch wenn du über den MCP interaktiv arbeitest, muss das Endergebnis als Skripte im Repo liegen (`fusion/build_model.py`, `fusion/checks.py`). Damit lässt sich das Modell jederzeit neu erzeugen und prüfen.
+5. **Einheiten:** Die Fusion-API rechnet intern in **cm** (Längen) und **rad** (Winkel). Masse kommt in kg, Schwerpunkte in cm. Konsequent umrechnen und in einem Test prüfen.
+6. Keinen Code aus dem Internet ungeprüft ausführen.
 
 ## Phase 3 – Natives, parametrisches Fusion-Modell
 
